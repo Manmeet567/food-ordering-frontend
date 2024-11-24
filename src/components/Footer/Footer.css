@@ -9,6 +9,23 @@
     padding: 0 100px;
     background-color: #D9D9D9;
     height: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.company-info{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+.company-info >img:nth-child(1){
+    width: 268px;
+}
+.company-info > img:nth-child(2){
+    margin: 30px 0;
+}
+.company-info > p{
+    font-size: 15px;
 }
 .sub-footer{
     width: 100%;
