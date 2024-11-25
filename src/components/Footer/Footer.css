@@ -2,30 +2,99 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    
 }
 .main-footer{
     width: 100%;
-    padding: 0 100px;
-    background-color: #D9D9D9;
-    height: 350px;
+    padding: 40px 100px;
+    background-color: rgba(217, 217, 217, 60%);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 .company-info{
     display: flex;
     flex-direction: column;
     width: 350px;
 }
-.company-info >img:nth-child(1){
-    width: 268px;
+.company-info > a > img, .company-info > a{
+    width: 200px;
+
 }
 .company-info > img:nth-child(2){
     margin: 30px 0;
+    cursor: pointer;
 }
 .company-info > p{
     font-size: 15px;
+}
+
+.mf-other-info{
+    display: flex;
+    align-items: center;
+}
+.mfoi-first{
+    width: 400px;
+}
+.mfoif-subscribe{
+    width: 100%;
+    border-radius: 100px;
+    background-color: #D9D9D9;
+    overflow: hidden;
+    margin-top: 25px;
+}
+.mfoif-subscribe > input{
+    width: 65%;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 30px;
+    background-color: transparent;
+    font-size: 12px;
+}
+.mfoif-subscribe > input::placeholder{
+    color: #00000099;
+}
+.mfoif-subscribe > button{
+    width: 35%;
+    background-color: #FC8A06;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+    border-radius: 100px;
+}
+.mfoi-first > p{
+    margin-left: 30px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.mfoif-icons{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+.f-icon{
+    width: 45px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.mfoi-links{
+    margin-left: 40px;
+}
+.mfoi-links > h4{
+    margin-bottom: 15px;
+}
+.mfoi-links > div > a{
+    text-decoration: underline;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.mfoi-links > div > a{
+    display: block;
 }
 .sub-footer{
     width: 100%;

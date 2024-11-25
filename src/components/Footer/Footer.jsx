@@ -1,36 +1,38 @@
 import "./Footer.css";
 import appStoreBadge from "../../assets/app-store-badges.png";
 import footerLogo from "../../assets/footer-logo.png";
-import { FaFacebook } from "react-icons/fa";
-import { FaSnapchat } from "react-icons/fa6";
-import { AiFillInstagram, AiFillTikTok } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import facebook from "../../assets/Facebook.png";
+import instagram from '../../assets/Instagram.png';
+import tiktok from '../../assets/TikTok.png';
+import snapchat from '../../assets/Snapchat.png';
 
 function Footer() {
   return (
     <div className="footer">
       <div className="main-footer">
         <div className="company-info">
-          <img src={footerLogo} alt="Logo" />
+          <Link to="/"><img src={footerLogo} alt="Logo" /></Link>
           <img src={appStoreBadge} alt="app store" />
           <p>Company # 490039-445, Registered with House of companies.</p>
         </div>
         <div className="mf-other-info">
           <div className="mfoi-first">
-            <h5>Get Exclusive Deals in your Inbox</h5>
+            <h4>Get Exclusive Deals in your Inbox</h4>
             <div className="mfoif-subscribe">
-              <input type="text" />
+              <input type="text" placeholder="youremail@gmail.com"/>
               <button>Subscribe</button>
             </div>
             <p>we wont spam, read our email policy</p>
             <div className="mfoif-icons">
-              <FaFacebook />
-              <AiFillInstagram />
-              <AiFillTikTok />
-              <FaSnapchat />
+              <img src={facebook} alt="facebook" className="f-icon" />
+              <img src={instagram} alt="instagram" className="f-icon" />
+              <img src={tiktok} alt="tiktok" className="f-icon" />
+              <img src={snapchat} alt="snapchat" className="f-icon" />
             </div>
           </div>
           <div className="mfoi-links">
-            <h5>Legal Pages</h5>
+            <h4>Legal Pages</h4>
             <div>
               <a href="#">Terms and conditions</a>
               <a href="#">Privacy</a>
@@ -39,7 +41,7 @@ function Footer() {
             </div>
           </div>
           <div className="mfoi-links">
-            <h5>Important Links</h5>
+            <h4>Important Links</h4>
             <div>
               <a href="#">Get help</a>
               <a href="#">Add your restaurant</a>

@@ -1,10 +1,12 @@
 import React from 'react';
 import authbg from "../../assets/auth-bg.png";
 import Footer from '../Footer/Footer';
+import './AuthForm.css';
 
 const AuthForm = ({ inputs, handleSubmit, buttonText, loading, error }) => {
   return (
     <div className="auth-form">
+      <div className="af-container">
       <form onSubmit={handleSubmit}>
         {inputs.map((input) => (
           <div key={input.name} className="input-group">
@@ -23,7 +25,8 @@ const AuthForm = ({ inputs, handleSubmit, buttonText, loading, error }) => {
         </button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
-      {/* <img src={authbg} alt="" /> */}
+      </div>
+      
       <Footer />
     </div>
   );
