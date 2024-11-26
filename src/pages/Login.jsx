@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { login } from '../redux/slices/authSlice'; 
-import AuthForm from '../components/AuthForm/AuthForm'; // Importing the reusable AuthForm component
+import { login, fetchUserData } from '../redux/slices/authSlice'; 
+import AuthForm from '../components/AuthForm/AuthForm';
+import {jwtDecode} from 'jwt-decode';
 
 const Login = () => {
-  const { user, error, loading } = useSelector((state) => state.auth);
+  const { user, token, error, loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -13,27 +14,47 @@ const Login = () => {
   // This is the path the user was trying to access before being redirected to login
   const from = location.state?.from?.pathname || '/';
 
-  // Local state for form inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Handles login submit
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(login({ email, password }));
+
+    const result = await dispatch(login({ email, password }));
+
+    if (login.fulfilled.match(result)) {
+      const decodedToken = jwtDecode(result.payload.token); 
+      const userId = decodedToken._id; 
+      dispatch(fetchUserData(userId));
+    }
   };
 
-  // Effect to navigate the user to the desired route after login
+  // Navigate once the user data is populated after login
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
     }
   }, [user, navigate, from]);
 
-  // Define the input fields for the login form
+  // Form inputs array
   const inputs = [
-    { label: 'Email', name: 'email',placeholder: 'Example@email.com' ,type: 'email', value: email, onChange: (e) => setEmail(e.target.value) },
-    { label: 'Password', name: 'password',placeholder:'At least 8 characters', type: 'password', value: password, onChange: (e) => setPassword(e.target.value) }
+    {
+      label: 'Email',
+      name: 'email',
+      placeholder: 'Example@email.com',
+      type: 'email',
+      value: email,
+      onChange: (e) => setEmail(e.target.value)
+    },
+    {
+      label: 'Password',
+      name: 'password',
+      placeholder: 'At least 8 characters',
+      type: 'password',
+      value: password,
+      onChange: (e) => setPassword(e.target.value)
+    }
   ];
 
   return (

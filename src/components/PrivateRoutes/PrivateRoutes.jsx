@@ -5,8 +5,8 @@ import {jwtDecode} from 'jwt-decode'; // Import jwtDecode to verify token
 
 export const PrivateRoute = ({ children }) => {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
-
+  const { token } = useSelector((state) => state.auth);
+  
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (!storedUser) {
@@ -15,10 +15,10 @@ export const PrivateRoute = ({ children }) => {
     }
 
     try {
-      const { token } = JSON.parse(storedUser);
+      const data = JSON.parse(storedUser);
 
       // Decode the token and check expiration
-      const decodedToken = jwtDecode(token);
+      const decodedToken = jwtDecode(data?.token);
 
       if (decodedToken.exp * 1000 < Date.now()) {
         // Token expired, redirect to login
@@ -30,9 +30,9 @@ export const PrivateRoute = ({ children }) => {
       localStorage.removeItem('user');
       navigate('/login', { replace: true });
     }
-  }, [navigate, user]);
+  }, [navigate, token]);
 
-  if (!user) {
+  if (!token) {
     return null; // or a loading spinner if needed
   }
 
@@ -41,15 +41,15 @@ export const PrivateRoute = ({ children }) => {
 
 export const UnprotectedRoute = ({ children }) => {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      const { token } = JSON.parse(storedUser);
+      const data = JSON.parse(storedUser);
 
       try {
-        const decodedToken = jwtDecode(token);
+        const decodedToken = jwtDecode(data?.token);
 
         if (decodedToken.exp * 1000 > Date.now()) {
           // Token is valid, redirect to home
@@ -60,7 +60,7 @@ export const UnprotectedRoute = ({ children }) => {
         localStorage.removeItem('user');
       }
     }
-  }, [navigate, user]);
+  }, [navigate, token]);
 
   return children; 
 };

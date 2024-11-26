@@ -1,0 +1,117 @@
+.home-banner {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 100px;
+}
+.hb-container{
+    height: 500px;
+    width: 100%;
+    background-color: #FBFBFB;
+    border: 1px solid #00000033;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+}
+.hb-text-content{
+    margin-left: 70px;
+}
+.hb-text-content > p{
+    font-size: 16px;
+    color: #03081F;
+    margin-bottom: 5px;
+}
+.hb-text-content > h1:nth-child(2) {
+    color: #03081F;
+    font-size: 48px;
+    line-height: 66px;
+}
+.hb-text-content > h1:nth-child(3) {
+    color: #FC8A06;
+    margin-bottom: 20px;
+    line-height: 66px;
+    font-size: 48px;
+}
+.hbtc-input-box{
+    width: 350px;
+}
+.hbtc-input-box > label{
+    color: #03081F;
+    font-size: 13px;
+}
+.hbtc-input{
+    margin-top: 5px;
+    border: 1px solid #00000066;
+    border-radius: 100px;
+    position: relative;
+}
+.hbtc-input > input{
+    color: #000000CC;
+    outline: none;
+    padding:10px 20px;
+    border: none;
+    border-radius: 100px;
+    width: 65%;
+}
+.hbtc-input > input::placeholder{
+    color: #000000CC;
+}
+.hbtc-input > button{
+    width: 35%;
+    padding: 10px 20px;
+    border: 1px solid #FC8A06;
+    background-color: #FC8A06;
+    border-radius: 80px;
+    position: absolute;
+    top: -0.5px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 700;
+    right: -1px;
+}
+.banner-girl{
+    position: absolute;
+    width: 750px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -2px;
+    z-index: 999;
+}
+.orange-div{
+    width: 500px;
+    height: 450px;
+    background-color: #FC8A06;
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 200px;
+}
+.home-girl{
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    right: 250px;
+    width: 300px;
+}
+.comment1, .comment2, .comment3 {
+    position: absolute;
+    width: 320px;
+    z-index: 111;
+}
+.comment1 {
+    right: 70px;
+    top: 50px;
+}
+.comment2{
+    right: 0;
+    top: 200px;
+}
+.comment3{
+    right: 50px;
+    bottom: 0;
+}

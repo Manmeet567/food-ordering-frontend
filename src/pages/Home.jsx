@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../redux/slices/authSlice';  // Import the logout action
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import HomeBanner from '../components/Banner/HomeBanner';
 
 function Home() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function Home() {
   return (
     <div className='home'>
       <Navbar />
-      <h1>Home</h1>
+      <HomeBanner />
       <nav>
         <ul>
           <li>

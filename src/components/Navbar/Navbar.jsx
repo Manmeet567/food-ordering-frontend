@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setActiveLink } from "../../redux/slices/navSlice";
@@ -6,12 +6,17 @@ import Location from "../../assets/Location.png";
 import basket from "../../assets/Full Shopping Basket.png";
 import downArrow from "../../assets/Down Arrow.png";
 import Logo from "../../assets/logo.png";
-import user from "../../assets/Male User.png";
+import userpic from "../../assets/Male User.png";
 import "./Navbar.css";
 
 function Navbar() {
   const dispatch = useDispatch();
   const { activeLink } = useSelector((state) => state.navbar);
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
 
   const handleSetActive = (link) => {
     dispatch(setActiveLink(link));
@@ -89,9 +94,13 @@ function Navbar() {
             >
               Track Order
             </a>
+
+            {/* Check if user is logged in and display their name */}
             <Link to="/your-profile" className="mn-your-profile">
-              <img src={user} alt="user" />
-              <span>Login/Signup</span>
+              <img src={userpic} alt="user" />
+              <span>
+                {user && user.name ? `Hey, ${user.name}` : "Login/Signup"}
+              </span>
             </Link>
           </div>
         </div>
