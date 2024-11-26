@@ -10,6 +10,8 @@ import YourProfile from './pages/YourProfile';
 import OrderSuccessful from './pages/OrderSuccessful';
 import Restaurant from './pages/Restaurant';
 import Checkout from './pages/Checkout';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { PrivateRoute, UnprotectedRoute } from './components/PrivateRoutes/PrivateRoutes';
 
 function App() {
@@ -105,6 +107,18 @@ function App() {
           <Route path="*" element={<div>Page not found</div>} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }

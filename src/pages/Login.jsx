@@ -32,15 +32,15 @@ const Login = () => {
 
   // Define the input fields for the login form
   const inputs = [
-    { label: 'Email', name: 'email', type: 'email', value: email, onChange: (e) => setEmail(e.target.value) },
-    { label: 'Password', name: 'password', type: 'password', value: password, onChange: (e) => setPassword(e.target.value) }
+    { label: 'Email', name: 'email',placeholder: 'Example@email.com' ,type: 'email', value: email, onChange: (e) => setEmail(e.target.value) },
+    { label: 'Password', name: 'password',placeholder:'At least 8 characters', type: 'password', value: password, onChange: (e) => setPassword(e.target.value) }
   ];
 
   return (
     <AuthForm
       inputs={inputs}
       handleSubmit={handleSubmit}
-      buttonText="Login"
+      buttonText="Sign in"
       loading={loading}
       error={error}
     />

@@ -19,17 +19,17 @@ const Signup = () => {
   };
 
   const inputs = [
-    { label: 'Name', name: 'name', type: 'text', value: name, onChange: (e) => setName(e.target.value) },
-    { label: 'Phone', name: 'phone', type: 'tel', value: phone, onChange: (e) => setPhone(e.target.value) },
-    { label: 'Email', name: 'email', type: 'email', value: email, onChange: (e) => setEmail(e.target.value) },
-    { label: 'Password', name: 'password', type: 'password', value: password, onChange: (e) => setPassword(e.target.value) }
+    { label: 'Name', name: 'name',placeholder: 'eg. John A', type: 'text', value: name, onChange: (e) => setName(e.target.value) },
+    { label: 'Phone', name: 'phone',placeholder: 'Enter your 10 digit mobile number', type: 'tel', value: phone, onChange: (e) => setPhone(e.target.value) },
+    { label: 'Email', name: 'email',placeholder: 'Example@email.com', type: 'email', value: email, onChange: (e) => setEmail(e.target.value) },
+    { label: 'Password', name: 'password',placeholder: 'At least 8 characters', type: 'password', value: password, onChange: (e) => setPassword(e.target.value) }
   ];
 
   return (
     <AuthForm
       inputs={inputs}
       handleSubmit={handleSubmit}
-      buttonText="Signup"
+      buttonText="Continue"
       loading={loading}
       error={error}
     />

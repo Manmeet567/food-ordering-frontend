@@ -1,4 +1,83 @@
-.af-container{
-    height: 100vh;
+.af-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  overflow: hidden;
+}
+.af-container > .form {
+  width: 49%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form > form {
+  width: 463px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form > form > img {
+  width: 170px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-container > p:nth-child(1) {
+  font-weight: 600;
+  font-size: 30px;
+  margin: 5px 0 10px;
+}
+.form-container > p:nth-child(2) {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.input-group > label{
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+.input-group > input{
+    border: 1px solid #00000066;
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 10px 20px;
+    color: #8897AD;
+}
+form > button {
     width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #FC8A06;
+    cursor: pointer;
+    color: #fff;
+}
+.create-account-link{
+    margin-top: 5px;
+    color: #313957;
+}
+.create-account-link > a{
+    color: #FC8A06;
+}
+.auth-bg {
+  width: 49%;
+  background: url("../../assets/auth-bg.png");
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
 }
