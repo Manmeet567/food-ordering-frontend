@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/slices/authSlice';  // Import the logout action
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 function Home() {
   const dispatch = useDispatch();
@@ -15,7 +17,8 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className='home'>
+      <Navbar />
       <h1>Home</h1>
       <nav>
         <ul>
@@ -39,6 +42,7 @@ function Home() {
       <button onClick={handleLogout} style={{ marginTop: '20px' }}>
         Logout
       </button>
+      <Footer />
     </div>
   );
 }

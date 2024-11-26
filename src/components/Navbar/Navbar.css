@@ -1,0 +1,123 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sub-navbar,
+.main-navbar {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 100px;
+}
+.sn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: #fafafa;
+  border-left: 1px solid #0000001a;
+  border-right: 1px solid #0000001a;
+  border-bottom: 1px solid #0000001a;
+  overflow: hidden;
+}
+.sn-first {
+  margin-left: 20px;
+}
+.sn-first > span:nth-child(2) > a {
+  color: #fc8a06;
+  text-decoration: underline;
+  font-weight: 700;
+}
+.sn-second {
+  display: flex;
+  align-items: center;
+}
+.location-info {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  font-size: 14px;
+  color: #03081f;
+}
+.location-info > img {
+  margin-right: 10px;
+}
+.location-info > a {
+  color: #fc8a06;
+  text-decoration: underline;
+  margin-left: 10px;
+  font-weight: 500;
+}
+.sn-cart {
+  background-color: #028643;
+  display: flex;
+  border-bottom-left-radius: 12px;
+}
+.snc-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-right: 1px solid rgba(255, 255, 255, 50%);
+}
+.snc-first > img {
+  width: 35px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.snc-first > span {
+  color: #fff;
+  margin-right: 30px;
+}
+.sn-cart > div:nth-child(2) {
+  width: 80px;
+  border-right: 1px solid rgba(255, 255, 255, 50%);
+}
+.snc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.mn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.mn-container > a > img {
+    width: 160px;
+}
+.mn-container > .mn-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mn-options > a{
+    color: #000000;
+    margin-left: 20px;
+    border-radius: 50px;
+    padding: 7px 20px;
+    font-weight: 500;
+}
+.active {
+    background-color:#fc8a06;
+    border-radius: 80px;
+    color: #fff !important;
+}
+.mn-your-profile{
+    display: flex;
+    align-items: center;
+    background-color: #03081F;
+    color: #fff !important;
+    padding: 12px 20px !important;
+    text-align: center !important;
+}
+.mn-your-profile > img{
+    margin-right: 10px;
+}
+.mn-your-profile > span{
+    margin-right: 10px;
+}

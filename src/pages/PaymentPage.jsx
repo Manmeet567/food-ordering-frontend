@@ -1,10 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 
 function PaymentPage() {
   return (
-    <div>PaymentPage
+    <div className='payment-page'>
+      <Navbar />
+
+      PaymentPage
       <nav>
         <ul>
           <li>
@@ -24,6 +29,8 @@ function PaymentPage() {
           </li>
         </ul>
       </nav>
+
+      <Footer />
     </div>
   )
 }

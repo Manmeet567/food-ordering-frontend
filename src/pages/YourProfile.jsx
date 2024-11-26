@@ -1,10 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 function YourProfile() {
   return (
-    <div>Yourprofile
+    <div className="your-profile">
+      <Navbar />
+      Yourprofile
       <nav>
         <ul>
           <li>
@@ -24,8 +27,9 @@ function YourProfile() {
           </li>
         </ul>
       </nav>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default YourProfile
+export default YourProfile;
