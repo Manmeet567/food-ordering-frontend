@@ -1,0 +1,29 @@
+.popular-restaurants {
+  width: 100%;
+  overflow: hidden;
+  padding: 0px 100px;
+}
+.pr-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pr-card{
+    width: 200px;
+    height: 230px;
+    border-radius: 12px;
+    background-color: #FC8A06;
+    overflow: hidden;
+}
+.pr-card > img{
+    height: 75%;
+    width: 100%;
+}
+.pr-card > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    height: 17%;
+}

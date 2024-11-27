@@ -6,12 +6,11 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import HomeBanner from "../components/Banner/HomeBanner";
 import TitleBar from "../components/TitleBar/TitleBar";
-import { createContext, useContext } from "react";
 import apiClient from "../utils/apiClient";
 import DealsAndDiscount from "../components/DealsAndDiscount/DealsAndDiscount";
 import PopularCategories from "../components/PopularCategories/PopularCategories";
+import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
 
-const HomeDataContext = createContext(null);
 
 function Home() {
   const dispatch = useDispatch();
@@ -23,50 +22,6 @@ function Home() {
   };
 
   const [homeData, setHomeData] = useState({
-    restaurants: [
-      {
-        _id: "67403bca3a84cdd7e4d4968b",
-        restaurant_name: "McDonald’s London",
-        restaurant_img:
-          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186341/Rectangle_13_uzuxj0.png",
-        __v: 0,
-      },
-      {
-        _id: "67403c143a84cdd7e4d4968d",
-        restaurant_name: "Papa Johns",
-        restaurant_img:
-          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186341/Rectangle_13_1_ldnyvy.png",
-        __v: 0,
-      },
-      {
-        _id: "67403c3a3a84cdd7e4d4968f",
-        restaurant_name: "KFC West London",
-        restaurant_img:
-          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186341/Rectangle_13_2_o8cc9n.png",
-        __v: 0,
-      },
-      {
-        _id: "67403c5d3a84cdd7e4d49691",
-        restaurant_name: "Texas Chicken",
-        restaurant_img:
-          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186341/Rectangle_13_3_lx4gvt.png",
-        __v: 0,
-      },
-      {
-        _id: "67403c853a84cdd7e4d49693",
-        restaurant_name: "Burger King",
-        restaurant_img:
-          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186341/Rectangle_13_4_tamffn.png",
-        __v: 0,
-      },
-      {
-        _id: "67403caa3a84cdd7e4d49695",
-        restaurant_name: "Shaurma 1",
-        restaurant_img:
-          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186340/Rectangle_13_5_fhaldo.png",
-        __v: 0,
-      },
-    ],
     deals: [
       {
         _id: "674076db99ed6dc26a92a2d0",
@@ -146,12 +101,12 @@ function Home() {
     ],
   });
 
-  useEffect(() => {
-    apiClient
-      .get("/home-page/data")
-      .then((response) => setHomeData(response.data))
-      .catch((error) => console.error("Error fetching home page data", error));
-  }, []);
+  // useEffect(() => {
+  //   apiClient
+  //     .get("/home-page/data")
+  //     .then((response) => setHomeData(response.data))
+  //     .catch((error) => console.error("Error fetching home page data", error));
+  // }, []);
 
   const SmallNavbar = () => {
     const [activeItem, setActiveItem] = useState("Pizza & Fast food");
@@ -177,10 +132,8 @@ function Home() {
     );
   };
 
-  // const homeData = useContext(HomeDataContext); this is how to get home data in another component
 
   return (
-    <HomeDataContext.Provider value={homeData}>
       <div className="home">
         <Navbar />
         <HomeBanner />
@@ -190,6 +143,13 @@ function Home() {
         <DealsAndDiscount data={homeData?.deals} showButton={false} />
         <TitleBar title="Order.uk Popular Categories 🤩" />
         <PopularCategories data={homeData?.popularCategories} />
+        <TitleBar title="Popular Restaurants" />
+        <PopularRestaurants />
+        <div className="home-page-banner">
+          <div className="hpb-container">
+            <img src="https://res.cloudinary.com/dianvv6lu/image/upload/v1732186566/Ordering_APP_khkyu9.png" alt="banner" />
+          </div>
+        </div>
         <nav>
           <ul>
             <li>
@@ -202,7 +162,6 @@ function Home() {
         </button>
         <Footer />
       </div>
-    </HomeDataContext.Provider>
   );
 }
 
