@@ -9,6 +9,7 @@ import TitleBar from "../components/TitleBar/TitleBar";
 import { createContext, useContext } from "react";
 import apiClient from "../utils/apiClient";
 import DealsAndDiscount from "../components/DealsAndDiscount/DealsAndDiscount";
+import PopularCategories from "../components/PopularCategories/PopularCategories";
 
 const HomeDataContext = createContext(null);
 
@@ -89,7 +90,44 @@ function Home() {
           "https://res.cloudinary.com/dianvv6lu/image/upload/v1732185751/Rectangle_8_ahmfir.png",
       },
     ],
-    popularCategories: [],
+    popularCategories: [
+      {
+          "_id": "6740789199ed6dc26a92a2d4",
+          "popular_item": "Burgers & Fast food",
+          "popular_restaurants_count": 21,
+          "img": "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186167/Rectangle_17_l01z69.png"
+      },
+      {
+          "_id": "674078ea99ed6dc26a92a2d5",
+          "popular_item": "Salads",
+          "popular_restaurants_count": 32,
+          "img": "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186168/Rectangle_15_brnmmh.png"
+      },
+      {
+          "_id": "6740793499ed6dc26a92a2d6",
+          "popular_item": "Pasta & Casuals",
+          "popular_restaurants_count": 4,
+          "img": "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186167/Rectangle_13_poa7fu.png"
+      },
+      {
+          "_id": "674079b899ed6dc26a92a2d8",
+          "popular_item": "Pizza",
+          "popular_restaurants_count": 33,
+          "img": "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186167/Rectangle_19_y2974s.png"
+      },
+      {
+          "_id": "67407a2999ed6dc26a92a2d9",
+          "popular_item": "Breakfast",
+          "popular_restaurants_count": 4,
+          "img": "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186167/Rectangle_21_atop0v.png"
+      },
+      {
+          "_id": "67407a6999ed6dc26a92a2da",
+          "popular_item": "Soups",
+          "popular_restaurants_count": 32,
+          "img": "https://res.cloudinary.com/dianvv6lu/image/upload/v1732186167/Rectangle_23_ivqbnm.png"
+      }
+  ],
     opportunities: [
       {
         _id: "67407aec99ed6dc26a92a2db",
@@ -108,12 +146,12 @@ function Home() {
     ],
   });
 
-  // useEffect(() => {
-  //   apiClient
-  //     .get("/home-page/data")
-  //     .then((response) => setHomeData(response.data))
-  //     .catch((error) => console.error("Error fetching home page data", error));
-  // }, []);
+  useEffect(() => {
+    apiClient
+      .get("/home-page/data")
+      .then((response) => setHomeData(response.data))
+      .catch((error) => console.error("Error fetching home page data", error));
+  }, []);
 
   const SmallNavbar = () => {
     const [activeItem, setActiveItem] = useState("Pizza & Fast food");
@@ -151,6 +189,7 @@ function Home() {
         </TitleBar>
         <DealsAndDiscount data={homeData?.deals} showButton={false} />
         <TitleBar title="Order.uk Popular Categories 🤩" />
+        <PopularCategories data={homeData?.popularCategories} />
         <nav>
           <ul>
             <li>

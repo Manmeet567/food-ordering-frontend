@@ -1,0 +1,35 @@
+.popular-categories {
+  width: 100%;
+  overflow: hidden;
+  padding: 0px 100px;
+}
+.pc-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pc-card{
+    width: 200px;
+    height: 230px;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+    border: 1px solid #0000001A;
+    overflow: hidden;
+}
+.pc-card > img{
+    object-fit: cover;
+    width: 100%;
+    height: 75%;
+}
+.pc-text-content{
+    padding: 0px 15px;
+}
+.pc-text-content > p:nth-child(1){
+    font-size: 16px;
+    font-weight: 700;
+    color: #03081F;
+}
+.pc-text-content > p:nth-child(2){
+    color: #FC8A06;
+    font-size: 13px;
+}
