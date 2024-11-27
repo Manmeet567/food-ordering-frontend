@@ -3,27 +3,32 @@
   overflow: hidden;
   padding: 0px 100px;
 }
+
 .pr-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px; 
   align-items: center;
 }
-.pr-card{
-    width: 200px;
-    height: 230px;
-    border-radius: 12px;
-    background-color: #FC8A06;
-    overflow: hidden;
+
+.pr-card {
+  width: 100%;
+  height: 230px;
+  border-radius: 12px;
+  background-color: #FC8A06;
+  overflow: hidden;
 }
-.pr-card > img{
-    height: 75%;
-    width: 100%;
+
+.pr-card > img {
+  height: 75%;
+  width: 100%;
 }
-.pr-card > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-weight: 700;
-    height: 17%;
+
+.pr-card > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  height: 17%;
 }

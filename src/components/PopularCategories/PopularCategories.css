@@ -4,12 +4,13 @@
   padding: 0px 100px;
 }
 .pc-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    align-items: center;
 }
 .pc-card{
-    width: 200px;
+    width: 100%;
     height: 230px;
     border-radius: 12px;
     background-color: #F5F5F5;

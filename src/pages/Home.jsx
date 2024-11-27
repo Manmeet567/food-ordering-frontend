@@ -10,6 +10,7 @@ import apiClient from "../utils/apiClient";
 import DealsAndDiscount from "../components/DealsAndDiscount/DealsAndDiscount";
 import PopularCategories from "../components/PopularCategories/PopularCategories";
 import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
+import Opportunities from "../components/Opportunities/Opportunities";
 
 
 function Home() {
@@ -150,6 +151,7 @@ function Home() {
             <img src="https://res.cloudinary.com/dianvv6lu/image/upload/v1732186566/Ordering_APP_khkyu9.png" alt="banner" />
           </div>
         </div>
+        <Opportunities opdata = {homeData?.opportunities} />
         <nav>
           <ul>
             <li>
