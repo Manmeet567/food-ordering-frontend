@@ -1,0 +1,31 @@
+.title-bar {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 100px;
+}
+.tb-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tb-title > p{
+    font-weight: 700;
+    font-size: 28px;
+    color: black;
+    margin-left: 20px;
+}
+.tb-sm-list{
+    display: flex;
+    list-style-type: none;
+}
+.tb-sm-list > li{
+    margin-left: 20px;  
+    padding: 8px 20px;
+    cursor: pointer; 
+}
+.tb-sm-active{
+    color: #FC8A06;
+    border: 1px solid #FC8A06;
+    font-weight: 600;
+    border-radius: 80px;
+}

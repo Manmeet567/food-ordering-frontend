@@ -14,10 +14,6 @@ function Navbar() {
   const { activeLink } = useSelector((state) => state.navbar);
   const { user } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    console.log(user)
-  }, [user])
-
   const handleSetActive = (link) => {
     dispatch(setActiveLink(link));
   };

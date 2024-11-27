@@ -61,11 +61,12 @@ export const fetchUserData = createAsyncThunk(
       }
 
       // Set the Authorization header with the Bearer token
-      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      // const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user/${userId}`, {
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
+      const response = await apiClient.get(`${import.meta.env.VITE_BASE_URL}/user/${userId}`, {});
 
       return response.data; // Return the user data if the request is successful
     } catch (error) {
