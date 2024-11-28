@@ -12,6 +12,7 @@ import PopularCategories from "../components/PopularCategories/PopularCategories
 import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
 import Opportunities from "../components/Opportunities/Opportunities";
 import KnowMoreAboutUs from "../components/KnowMoreAboutUs/KnowMoreAboutUs";
+import InfoBar from "../components/InfoBar/InfoBar";
 
 
 function Home() {
@@ -154,7 +155,8 @@ function Home() {
         </div>
         <Opportunities opdata = {homeData?.opportunities} />
         <KnowMoreAboutUs />
-        <nav>
+        <InfoBar />
+        {/* <nav>
           <ul>
             <li>
               <Link to="/payment-page">Payment Page</Link>
@@ -163,7 +165,7 @@ function Home() {
         </nav>
         <button onClick={handleLogout} style={{ marginTop: "20px" }}>
           Logout
-        </button>
+        </button> */}
         <Footer />
       </div>
   );
