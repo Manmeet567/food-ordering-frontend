@@ -4,15 +4,15 @@ import { useDispatch } from "react-redux";
 import { logout } from "../redux/slices/authSlice";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import HomeBanner from "../components/Banner/HomeBanner";
+import HomeBanner from "../components/Home/HomeBanner/HomeBanner";
 import TitleBar from "../components/TitleBar/TitleBar";
 import apiClient from "../utils/apiClient";
 import DealsAndDiscount from "../components/DealsAndDiscount/DealsAndDiscount";
-import PopularCategories from "../components/PopularCategories/PopularCategories";
+import PopularCategories from "../components/Home/PopularCategories/PopularCategories";
 import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
-import Opportunities from "../components/Opportunities/Opportunities";
-import KnowMoreAboutUs from "../components/KnowMoreAboutUs/KnowMoreAboutUs";
-import InfoBar from "../components/InfoBar/InfoBar";
+import Opportunities from "../components/Home/Opportunities/Opportunities";
+import KnowMoreAboutUs from "../components/Home/KnowMoreAboutUs/KnowMoreAboutUs";
+import InfoBar from "../components/Home/InfoBar/InfoBar";
 
 
 function Home() {

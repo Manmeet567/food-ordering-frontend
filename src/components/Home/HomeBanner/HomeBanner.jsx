@@ -1,10 +1,10 @@
 import React from "react";
 import "./HomeBanner.css";
-import girl from "../../assets/banner-girl.png";
-import homegirl from "../../assets/home-girl.png";
-import comment1 from "../../assets/home-cmnt-1.png";
-import comment2 from "../../assets/home-cmnt-2.png";
-import comment3 from "../../assets/home-cmnt-3.png";
+import girl from "../../../assets/banner-girl.png";
+import homegirl from "../../../assets/home-girl.png";
+import comment1 from "../../../assets/home-cmnt-1.png";
+import comment2 from "../../../assets/home-cmnt-2.png";
+import comment3 from "../../../assets/home-cmnt-3.png";
 
 function HomeBanner() {
   return (

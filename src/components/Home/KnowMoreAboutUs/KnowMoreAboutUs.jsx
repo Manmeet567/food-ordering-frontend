@@ -1,8 +1,8 @@
 import React from "react";
 import "./KnowMoreAboutUs.css";
-import order from "../../assets/order.png";
-import orderFood from "../../assets/order-food.png";
-import food from "../../assets/food.png";
+import order from "../../../assets/order.png";
+import orderFood from "../../../assets/order-food.png";
+import food from "../../../assets/food.png";
 
 function KnowMoreAboutUs() {
   const briefData = [
