@@ -11,6 +11,7 @@ import DealsAndDiscount from "../components/DealsAndDiscount/DealsAndDiscount";
 import PopularCategories from "../components/PopularCategories/PopularCategories";
 import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
 import Opportunities from "../components/Opportunities/Opportunities";
+import KnowMoreAboutUs from "../components/KnowMoreAboutUs/KnowMoreAboutUs";
 
 
 function Home() {
@@ -152,6 +153,7 @@ function Home() {
           </div>
         </div>
         <Opportunities opdata = {homeData?.opportunities} />
+        <KnowMoreAboutUs />
         <nav>
           <ul>
             <li>
