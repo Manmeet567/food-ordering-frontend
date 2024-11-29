@@ -39,7 +39,6 @@ function RestaurantBanner() {
                 size={18}
                 color2={"#ffd700"}
                 edit={false}
-                className="rb-stars"
               />
               <p>1320 reviews</p>
             </div>

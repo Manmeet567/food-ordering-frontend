@@ -1,10 +1,11 @@
-import {useState} from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import RestaurantBanner from "../components/RestaurantComponents/RestaurantBanner/RestaurantBanner";
 import TitleBar from "../components/TitleBar/TitleBar";
 import { useLocation } from "react-router-dom";
 import search from "../assets/Search More.png";
+import RestaurantNavbar from "../components/RestaurantComponents/RestaurantNavbar/RestaurantNavbar";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -34,6 +35,7 @@ function Restaurant() {
       <TitleBar title={`All Offers from ${restaurantName}`}>
         <SearchBar />
       </TitleBar>
+      <RestaurantNavbar />
       <Footer />
     </div>
   );
