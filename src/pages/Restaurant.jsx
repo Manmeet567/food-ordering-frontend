@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import RestaurantBanner from "../components/RestaurantComponents/RestaurantBanner/RestaurantBanner";
 import TitleBar from "../components/TitleBar/TitleBar";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import search from "../assets/Search More.png";
 import RestaurantNavbar from "../components/RestaurantComponents/RestaurantNavbar/RestaurantNavbar";
@@ -25,6 +26,7 @@ const SearchBar = () => {
 };
 
 function Restaurant() {
+  const { selectedRestaurant } = useSelector((state) => state.restaurants);
   const location = useLocation();
   const { restaurantName } = location.state || {};
 
@@ -32,7 +34,9 @@ function Restaurant() {
     <div className="restaurant">
       <Navbar />
       <RestaurantBanner />
-      <TitleBar title={`All Offers from ${restaurantName}`}>
+      <TitleBar
+        title={`All Offers from ${selectedRestaurant || restaurantName}`}
+      >
         <SearchBar />
       </TitleBar>
       <RestaurantNavbar />

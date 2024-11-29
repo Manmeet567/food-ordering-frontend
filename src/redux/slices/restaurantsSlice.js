@@ -22,11 +22,19 @@ export const fetchRestaurants = createAsyncThunk(
 const restaurantsSlice = createSlice({
   name: 'restaurants',
   initialState: {
-    restaurants: [], // Initial state for restaurants data
+    restaurants: [], 
+    selectedRestaurant: null,
     loading: false,
     error: null
   },
-  reducers: {},
+  reducers: {
+    setSelectedRestaurant: (state, action) => {
+      state.selectedRestaurant = action.payload;
+    },
+    clearSelectedRestaurant: (state) => {
+      state.selectedRestaurant = null;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRestaurants.pending, (state) => {
@@ -35,7 +43,7 @@ const restaurantsSlice = createSlice({
       })
       .addCase(fetchRestaurants.fulfilled, (state, action) => {
         state.loading = false;
-        state.restaurants = action.payload; // Set the restaurants data
+        state.restaurants = action.payload; // Set the fetched restaurants data
       })
       .addCase(fetchRestaurants.rejected, (state, action) => {
         state.loading = false;
@@ -43,5 +51,8 @@ const restaurantsSlice = createSlice({
       });
   }
 });
+
+// Export the actions
+export const { setSelectedRestaurant, clearSelectedRestaurant } = restaurantsSlice.actions;
 
 export default restaurantsSlice.reducer;

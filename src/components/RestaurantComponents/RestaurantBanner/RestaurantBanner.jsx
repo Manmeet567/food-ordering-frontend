@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./RestaurantBanner.css";
-import { useLocation } from "react-router-dom";
 import restaurantBanner from "../../../assets/restaurant-banner.png";
 import orderCompleted from "../../../assets/completed.png";
 import motocross from "../../../assets/Motocross.png";
 import ReactStars from "react-stars";
 import clock from "../../../assets/Clock.png";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 function RestaurantBanner() {
+  const { selectedRestaurant } = useSelector((state) => state.restaurants);
   const location = useLocation();
   const { restaurantName } = location.state || {};
+
   return (
     <div className="restaurant-banner">
       <div className="rb-main-container">
@@ -17,7 +20,7 @@ function RestaurantBanner() {
           <img className="rb-banner-img" src={restaurantBanner} alt="banner" />
           <div className="rb-text-content">
             <p>I'm lovin' it!</p>
-            <h1>{restaurantName}</h1>
+            <h1>{selectedRestaurant || restaurantName || "Restaurant"}</h1>
             <div className="rb-btn-grp">
               <button>
                 <img src={orderCompleted} alt="asd" />
