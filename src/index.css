@@ -12,9 +12,14 @@
   overflow: hidden;
   padding: 0px 100px;
 }
-.hpb-container{
-    margin-top: 20px;
+.hpb-container {
+  margin-top: 20px;
 }
-.hpb-container > img{
-    width: 100%;
+.hpb-container > img {
+  width: 100%;
+}
+.restaurant-main-content {
+  width: 100%;
+  overflow: hidden;
+  padding: 100px;
 }

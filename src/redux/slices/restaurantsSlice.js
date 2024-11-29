@@ -19,6 +19,18 @@ export const fetchRestaurants = createAsyncThunk(
   }
 );
 
+export const getOneRestaurant = createAsyncThunk(
+  'restaurants/getOneRestaurant',
+  async (restaurantSlug, { rejectWithValue }) => {
+    try {
+      const response = await apiClient.get(`/product-page/restaurant/${restaurantSlug}`);
+      return response.data.restaurant; 
+    } catch (error) {
+      return rejectWithValue('Failed to fetch restaurant details');
+    }
+  }
+);
+
 const restaurantsSlice = createSlice({
   name: 'restaurants',
   initialState: {
@@ -43,16 +55,27 @@ const restaurantsSlice = createSlice({
       })
       .addCase(fetchRestaurants.fulfilled, (state, action) => {
         state.loading = false;
-        state.restaurants = action.payload; // Set the fetched restaurants data
+        state.restaurants = action.payload; 
       })
       .addCase(fetchRestaurants.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(getOneRestaurant.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getOneRestaurant.fulfilled, (state, action) => {
+        state.loading = false;
+        state.selectedRestaurant = action.payload; 
+      })
+      .addCase(getOneRestaurant.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
   }
 });
 
-// Export the actions
 export const { setSelectedRestaurant, clearSelectedRestaurant } = restaurantsSlice.actions;
 
 export default restaurantsSlice.reducer;

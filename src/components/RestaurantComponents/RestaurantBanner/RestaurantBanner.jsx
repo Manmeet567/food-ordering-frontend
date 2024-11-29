@@ -10,8 +10,7 @@ import { useLocation } from "react-router-dom";
 
 function RestaurantBanner() {
   const { selectedRestaurant } = useSelector((state) => state.restaurants);
-  const location = useLocation();
-  const { restaurantName } = location.state || {};
+  
 
   return (
     <div className="restaurant-banner">
@@ -20,7 +19,7 @@ function RestaurantBanner() {
           <img className="rb-banner-img" src={restaurantBanner} alt="banner" />
           <div className="rb-text-content">
             <p>I'm lovin' it!</p>
-            <h1>{selectedRestaurant || restaurantName || "Restaurant"}</h1>
+            <h1>{selectedRestaurant?.restaurant_name}</h1>
             <div className="rb-btn-grp">
               <button>
                 <img src={orderCompleted} alt="asd" />

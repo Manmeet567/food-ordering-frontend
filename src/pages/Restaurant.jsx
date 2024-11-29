@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import RestaurantBanner from "../components/RestaurantComponents/RestaurantBanner/RestaurantBanner";
 import TitleBar from "../components/TitleBar/TitleBar";
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import search from "../assets/Search More.png";
 import RestaurantNavbar from "../components/RestaurantComponents/RestaurantNavbar/RestaurantNavbar";
+import RestaurantItems from "../components/RestaurantComponents/RestaurantItems/RestaurantItems";
+import Cart from "../components/RestaurantComponents/Cart/Cart";
+import { getOneRestaurant } from "../redux/slices/restaurantsSlice";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -26,20 +29,28 @@ const SearchBar = () => {
 };
 
 function Restaurant() {
+  const dispatch = useDispatch();
   const { selectedRestaurant } = useSelector((state) => state.restaurants);
-  const location = useLocation();
-  const { restaurantName } = location.state || {};
+  const { restaurantSlug } = useParams();
+
+  useEffect(() => {
+    if (!selectedRestaurant && restaurantSlug) {
+      dispatch(getOneRestaurant(restaurantSlug));
+    }
+  }, [dispatch, selectedRestaurant, restaurantSlug]);
 
   return (
     <div className="restaurant">
       <Navbar />
       <RestaurantBanner />
-      <TitleBar
-        title={`All Offers from ${selectedRestaurant || restaurantName}`}
-      >
+      <TitleBar title={`All Offers from ${selectedRestaurant?.restaurant_name}`}>
         <SearchBar />
       </TitleBar>
       <RestaurantNavbar />
+      <div className="restaurant-main-content">
+        <RestaurantItems />
+        <Cart />
+      </div>
       <Footer />
     </div>
   );

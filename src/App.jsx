@@ -77,7 +77,7 @@ function App() {
             }
           />
           <Route
-            path="/restaurant/:restaurant_name"
+            path="/restaurant/:restaurantSlug"
             element={
               <PrivateRoute>
                 <Restaurant />
