@@ -1,29 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
+import RestaurantBanner from '../components/RestaurantComponents/RestaurantBanner/RestaurantBanner';
+import TitleBar from '../components/TitleBar/TitleBar';
+import { useLocation } from "react-router-dom";
 
 
 function Restaurant() {
+  const location = useLocation();
+  const { restaurantName } = location.state || {};
+
   return (
-    <div>Restaurant
-      <nav>
-        <ul>
-          <li>
-            <Link to="/restaurant/restaurant_name">Restaurant</Link>
-          </li>
-          <li>
-            <Link to="/your-address">Your Address</Link>
-          </li>
-          <li>
-            <Link to="/payment-page">Payment Page</Link>
-          </li>
-          <li>
-            <Link to="/order-successful">Order Successful</Link>
-          </li>
-          <li>
-            <Link to="/your-profile">Your Profile</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className='restaurant'>
+      <Navbar />
+      <RestaurantBanner />
+      <TitleBar title={`All Offers from ${restaurantName}`} />
+      <Footer />
     </div>
   )
 }

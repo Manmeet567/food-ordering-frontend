@@ -1,0 +1,106 @@
+.restaurant-banner {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 100px;
+}
+.rb-main-container{
+    width: 100%;
+    height: 430px;
+    position: relative;
+}
+.rb-timing{
+    position: absolute;
+    bottom: 2px;
+    background-color: #FC8A06;
+    z-index: 2; 
+    padding: 10px 40px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.rb-timing > p{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+.rb-timing > p> img{
+    margin-right: 5px;
+}
+.rb-container {
+  height: 400px;
+  width: 100%;
+  background: #03081FE5;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 60px;
+}
+.rb-banner-img{
+    position: absolute;
+    z-index: -1;
+}
+.rb-text-content{
+    color: #fff;
+}
+.rb-text-content > p{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.rb-text-content > h1{
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+.rb-btn-grp {
+    display: flex;
+    align-items: center;
+}
+.rb-btn-grp > button{
+    border: 1px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+.rb-btn-grp > button > span{
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.rb-img{
+    width: 500px;
+    position: relative;
+}
+.rb-img > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+.rb-rating{
+    background-color: #Fff;
+    width: 120px;
+    height: 150px;
+    position: absolute;
+    bottom: -10px;
+    border-radius: 12px;
+    left: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.rb-rating > p:nth-child(1){
+    font-size: 50px;
+}
+.rb-rating > p:nth-child(3){
+    font-size: 13px;
+    color: #00000065;
+}
