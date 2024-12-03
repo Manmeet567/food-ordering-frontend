@@ -1,0 +1,230 @@
+.cart{
+    /* width: 27%; */
+}
+.share-cart{
+    width: 100%;
+    background-color: #FC8A06;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+.share-cart >img {
+    width: 45px;
+    margin-right: 10px;
+}
+.share-cart > p{
+    width: 170px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 5px;
+}
+.share-cart > button{
+    width: 91px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #FC8A06;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+}
+
+.my-basket{
+    border-radius: 12px;
+    width: 100%;
+    border: 1px solid #0000001C;
+    background-color: #F9F9F9;
+}
+.mb-header{
+    display: flex;
+    align-items: center;
+    background-color: #028643;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: #fff;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 25px 0;
+}
+.mb-header > img{
+    margin-right: 20px;
+}
+.mb-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid #00000033;
+}
+.mb-item > p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FC8A06;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+}
+.mbi-info{
+    margin-right: 5px;
+}
+.mbi-info > p:nth-child(1){
+    color: #028643;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.mbi-info > p:nth-child(2){
+    color: #03081F;
+    font-weight: 600;
+}
+.mbi-remove{
+    width: 35px;
+    cursor: pointer;
+    height: 35px;
+}
+
+.mb-sub-total{
+    padding: 20px;
+    border-top: 1px solid #00000033;
+}
+.mbst{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mb-sub-total > .mbst:nth-child(2){
+    margin: 10px 0;
+}
+.mbst > span:nth-child(1){
+    font-size: 18px;
+    font-weight: 600;
+    color: #03081F;
+}
+.mbst > span:nth-child(2) {
+    font-size: 20px;
+    color: #212121;
+}
+.mb-total{
+    padding: 30px 10px;   
+    border-top: 1px solid #00000033;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mb-total > button {
+    width: 100%;
+}
+.mb-total > button:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.mbt-total{
+    background-color: #FC8A06CC;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-radius: 8px;
+    border: 1px solid #0000001C;
+}
+.mbt-total > span:nth-child(1){
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+.mbt-total > span:nth-child(2){
+    font-size: 36px;
+    font-weight: 600;
+}
+.mbt-free-item, .mbt-coupon-code{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px 6px 20px;
+    border-radius: 60px;
+    border: 1px solid #CFCFCF;
+    color: #000;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.mb-checkout{
+    padding: 10px;
+    border-top: 1px solid #0000001C;
+}
+.mbc-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.mbco-option{
+    width: 46%;
+    background-color: #EEEEEE;
+    border: 1px solid #00000033;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.mbco-option > img, .mbco-disabled-option> img{
+    margin-bottom: 5px;
+}
+.mbco-option > p:nth-child(2){
+    font-weight: 600;
+}
+.mbco-line{
+    height: 100px;
+    width: 1px;
+    background-color: #00000033;
+    margin: 0 10px;
+}
+.mbco-disabled-option{
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor:not-allowed;
+}
+.mbco-disabled-option > p:nth-child(2){
+    font-weight: 600;
+    color: #00000082;
+}
+.mbco-disabled-option > p:nth-child(3){
+    color: #00000082;
+}
+.mbc-checkout-btn{
+    text-align: center;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #028643;
+    color: #fff;
+    padding: 15px 10px;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+}
+
+.mbc-checkout-btn > img{
+    position: absolute;
+    left: 15px;
+}

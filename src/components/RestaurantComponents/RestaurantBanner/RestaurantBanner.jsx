@@ -6,11 +6,9 @@ import motocross from "../../../assets/Motocross.png";
 import ReactStars from "react-stars";
 import clock from "../../../assets/Clock.png";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
 
 function RestaurantBanner() {
   const { selectedRestaurant } = useSelector((state) => state.restaurants);
-  
 
   return (
     <div className="restaurant-banner">

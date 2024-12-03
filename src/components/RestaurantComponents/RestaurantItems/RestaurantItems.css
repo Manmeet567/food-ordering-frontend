@@ -1,0 +1,16 @@
+.restaurant-menu {
+  margin: 100px 0;
+}
+.restaurant-menu > .menu-category {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.meals {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 20px;
+  grid-row-gap: 40px;
+  align-items: center;
+}

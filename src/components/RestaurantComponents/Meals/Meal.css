@@ -1,0 +1,50 @@
+.meal {
+  width: 100%;
+  /* max-width: 420px;  */
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #0000001a;
+  box-shadow: 5px 5px 34px 0px #00000040;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meal-text-content {
+  width: 50%;
+  margin-right: 10px;
+}
+.meal-text-content > p:nth-child(1) {
+  font-size: 18px;
+  font-weight: 600;
+}
+.meal-text-content > p:nth-child(2) {
+  font-size: 12px;
+  margin: 15px 0;
+}
+.meal-text-content > p:nth-child(3) {
+  color: #03081f;
+  font-size: 18px;
+  font-weight: 700;
+}
+.meal-img{
+    width: 46%;
+    position: relative;
+    cursor: pointer;
+}
+.meal-img > img{
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.add-meal-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 88px;
+    height: 81px;
+    background-color: #ffffffc6;
+    border-top-left-radius: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,11 +1,12 @@
 import React from "react";
 import "./DealsAndDiscount.css";
+import plus from "../../assets/Plus.png";
 
 function DealsAndDiscount({ data, showButton }) {
   return (
     <div className="deals-and-discount">
       <div className="dad-container">
-        {data.map((item) => (
+        {data?.map((item) => (
           <div className="dadc-card" key={item._id}>
             <img src={item.deal_img || item.img} alt="deal" />
             <div className="dadcc-discount">
@@ -17,6 +18,13 @@ function DealsAndDiscount({ data, showButton }) {
               </p>
               <p>{item.deal_restaurant ? item.deal_restaurant : item.offer}</p>
             </div>
+            {item.offer && (
+              <div className="dadcc-btn">
+                <button>
+                  <img className="dadccb-img" src={plus} alt="plus" />
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>

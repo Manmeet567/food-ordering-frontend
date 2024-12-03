@@ -12,6 +12,9 @@
   overflow: hidden;
   padding: 0px 100px;
 }
+.home-deals-and-discounts {
+  padding: 0px 100px;
+}
 .hpb-container {
   margin-top: 20px;
 }
@@ -19,7 +22,13 @@
   width: 100%;
 }
 .restaurant-main-content {
-  width: 100%;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 27%;
+  grid-gap: 100px; 
+  align-items: start;
+}
+
+.restaurant-main-content {
+  width: 100%; 
   padding: 100px;
 }
