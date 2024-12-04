@@ -53,6 +53,7 @@
   background-color: #028643;
   display: flex;
   border-bottom-left-radius: 12px;
+  cursor: pointer;
 }
 .snc-first {
   display: flex;

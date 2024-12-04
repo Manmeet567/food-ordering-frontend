@@ -22,7 +22,7 @@ function Map() {
   return (
     <div className="map">
       <div className="map-container">
-        <div className="location-info">
+        <div className="map-location-info">
           <p>{selectedRestaurant?.restaurant_name}</p>
           <p>London</p>
           <p>Tooley St, London Bridge, London SE1 2TF, United Kingdom</p>

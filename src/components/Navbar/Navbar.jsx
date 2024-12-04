@@ -8,11 +8,17 @@ import downArrow from "../../assets/Down Arrow.png";
 import Logo from "../../assets/logo.png";
 import userpic from "../../assets/Male User.png";
 import "./Navbar.css";
+import { setShowCart } from "../../redux/slices/cartSlice";
 
 function Navbar() {
   const dispatch = useDispatch();
   const { activeLink } = useSelector((state) => state.navbar);
   const { user } = useSelector((state) => state.auth);
+  const showCart = useSelector((state) => state.cart.showCart);
+
+  const handleCartDisplay = () => {
+    dispatch(setShowCart(!showCart));
+  };
 
   const handleSetActive = (link) => {
     dispatch(setActiveLink(link));
@@ -35,7 +41,7 @@ function Navbar() {
               <span>Regent Street, A4, A4201, London</span>
               <Link to="/your-address">Change Location</Link>
             </div>
-            <div className="sn-cart">
+            <div className="sn-cart" onClick={handleCartDisplay}>
               <div className="snc-first">
                 <img src={basket} alt="basket" />
                 <span>My Cart</span>

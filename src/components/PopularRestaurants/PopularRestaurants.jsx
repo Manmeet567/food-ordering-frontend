@@ -2,16 +2,20 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../../redux/slices/restaurantsSlice";
 import "./PopularRestaurants.css";
-import { Link } from "react-router-dom";
-import {
-  setSelectedRestaurant,
-} from "../../redux/slices/restaurantsSlice";
+import { Link, useLocation } from "react-router-dom";
+import { setSelectedRestaurant } from "../../redux/slices/restaurantsSlice";
 
 function PopularRestaurants() {
   const dispatch = useDispatch();
   const { restaurants, loading, error } = useSelector(
     (state) => state.restaurants
   );
+  
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, [pathname]);
 
   useEffect(() => {
     if (restaurants.length === 0) {
@@ -36,15 +40,14 @@ function PopularRestaurants() {
       <div className="pr-container">
         {restaurants.map((restaurant) => (
           <Link
-            to={`/restaurant/${restaurant.restaurant_slug}`}
+            to={`/restaurant/${restaurant?.restaurant_slug}`}
             onClick={() => handleRestaurantClick(restaurant)}
-            // state={{ restaurantName: restaurant.restaurant_name }}
-            key={restaurant._id}
+            key={restaurant?._id}
           >
             <div className="pr-card">
-              <img src={restaurant.restaurant_img} alt="img" />
+              <img src={restaurant?.restaurant_img} alt="img" />
               <div>
-                <p>{restaurant.restaurant_name}</p>
+                <p>{restaurant?.restaurant_name}</p>
               </div>
             </div>
           </Link>

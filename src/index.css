@@ -23,12 +23,8 @@
 }
 .restaurant-main-content {
   display: grid;
-  grid-template-columns: 1fr 27%;
-  grid-gap: 100px; 
+  grid-gap: 100px;
   align-items: start;
-}
-
-.restaurant-main-content {
-  width: 100%; 
+  width: 100%;
   padding: 100px;
 }

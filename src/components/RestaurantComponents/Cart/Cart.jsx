@@ -3,15 +3,16 @@ import share from "../../../assets/share.png";
 import "./Cart.css";
 import basket from "../../../assets/Full Shopping Basket.png";
 import remove from "../../../assets/Remove.png";
-import down from '../../../assets/Forward Button.png';
-import forward from '../../../assets/Forward Button green.png';
-import scooter from '../../../assets/Delivery Scooter.png';
-import store from '../../../assets/New Store.png';
-import checkoutArrow from '../../../assets/checkout-button-forward.png';
+import down from "../../../assets/Forward Button.png";
+import forward from "../../../assets/Forward Button green.png";
+import scooter from "../../../assets/Delivery Scooter.png";
+import store from "../../../assets/New Store.png";
+import checkoutArrow from "../../../assets/checkout-button-forward.png";
 
 function Cart() {
+
   return (
-    <div className="cart">
+    <div className="cart" id="cart">
       <div className="share-cart">
         <img src={share} alt="share" />
         <p>Share this cart with your friends</p>

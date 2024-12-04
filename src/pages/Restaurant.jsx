@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import RestaurantBanner from "../components/RestaurantComponents/RestaurantBanner/RestaurantBanner";
@@ -13,6 +13,7 @@ import { getOneRestaurant } from "../redux/slices/restaurantsSlice";
 import apiClient from "../utils/apiClient";
 import Information from "../components/RestaurantComponents/Information/Information";
 import Map from "../components/RestaurantComponents/Map/Map";
+import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -32,6 +33,15 @@ const SearchBar = () => {
 };
 
 function Restaurant() {
+  const showCart = useSelector((state) => state.cart.showCart);
+  const cartRef = useRef(null);
+
+  useEffect(() => {
+    if (showCart && cartRef.current) {
+      cartRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [showCart]);
+
   const [productData, setProductData] = useState({
     offers: [
       {
@@ -269,16 +279,27 @@ function Restaurant() {
         <SearchBar />
       </TitleBar>
       <RestaurantNavbar />
-      <div className="restaurant-main-content">
+      <div
+        className="restaurant-main-content"
+        style={{
+          gridTemplateColumns: showCart ? "1fr 27%" : "1fr",
+        }}
+      >
         <RestaurantItems
           offers={productData?.offers}
           categories={productData?.categories}
         />
-        <Cart />
+        {showCart && (
+          <div ref={cartRef}>
+            <Cart />
+          </div>
+        )}
       </div>
       <Information />
       <Map />
       <TitleBar title="Similar Restaurants" />
+      <PopularRestaurants />
+      <div style={{ width: "100%", paddingBottom: "100px" }}></div>
       <Footer />
     </div>
   );
