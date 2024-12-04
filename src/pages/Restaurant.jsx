@@ -12,6 +12,7 @@ import Cart from "../components/RestaurantComponents/Cart/Cart";
 import { getOneRestaurant } from "../redux/slices/restaurantsSlice";
 import apiClient from "../utils/apiClient";
 import Information from "../components/RestaurantComponents/Information/Information";
+import Map from "../components/RestaurantComponents/Map/Map";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -276,6 +277,8 @@ function Restaurant() {
         <Cart />
       </div>
       <Information />
+      <Map />
+      <TitleBar title="Similar Restaurants" />
       <Footer />
     </div>
   );

@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "./RestaurantBanner.css";
 import restaurantBanner from "../../../assets/restaurant-banner.png";
 import orderCompleted from "../../../assets/completed.png";
