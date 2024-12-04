@@ -11,6 +11,7 @@ import RestaurantItems from "../components/RestaurantComponents/RestaurantItems/
 import Cart from "../components/RestaurantComponents/Cart/Cart";
 import { getOneRestaurant } from "../redux/slices/restaurantsSlice";
 import apiClient from "../utils/apiClient";
+import Information from "../components/RestaurantComponents/Information/Information";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -274,6 +275,7 @@ function Restaurant() {
         />
         <Cart />
       </div>
+      <Information />
       <Footer />
     </div>
   );
