@@ -14,6 +14,7 @@ import apiClient from "../utils/apiClient";
 import Information from "../components/RestaurantComponents/Information/Information";
 import Map from "../components/RestaurantComponents/Map/Map";
 import PopularRestaurants from "../components/PopularRestaurants/PopularRestaurants";
+import Reviews from "../components/RestaurantComponents/Reviews/Reviews";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -248,7 +249,42 @@ function Restaurant() {
         review:
           "The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard – hot and satisfying.",
         review_date: "24th September, 2023",
+        customer_img:
+          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732196263/cfffaae581d294e098c6e189e54be2b3_uarvoq.png",
       },
+      {
+        _id: "674174ca3f0ed9ab7f98374a",
+        customer_name: "St Glx",
+        customer_city: "South London",
+        rating: 5,
+        review:
+          "The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard – hot and satisfying.",
+        review_date: "24th September, 2023",
+        customer_img:
+          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732196263/cfffaae581d294e098c6e189e54be2b3_uarvoq.png",
+      },
+      {
+        _id: "674174ca3f0ed9ab7f98374a",
+        customer_name: "St Glx",
+        customer_city: "South London",
+        rating: 5,
+        review:
+          "The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard – hot and satisfying.",
+        review_date: "24th September, 2023",
+        customer_img:
+          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732196263/cfffaae581d294e098c6e189e54be2b3_uarvoq.png",
+      },
+      {
+        _id: "674174ca3f0ed9ab7f98374a",
+        customer_name: "St Glx",
+        customer_city: "South London",
+        rating: 5,
+        review:
+          "The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard – hot and satisfying.",
+        review_date: "24th September, 2023",
+        customer_img:
+          "https://res.cloudinary.com/dianvv6lu/image/upload/v1732196263/cfffaae581d294e098c6e189e54be2b3_uarvoq.png",
+      }
     ],
   });
 
@@ -297,6 +333,7 @@ function Restaurant() {
       </div>
       <Information />
       <Map />
+      <Reviews reviews={productData?.reviews} />
       <TitleBar title="Similar Restaurants" />
       <PopularRestaurants />
       <div style={{ width: "100%", paddingBottom: "100px" }}></div>

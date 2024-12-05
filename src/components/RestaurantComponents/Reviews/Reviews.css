@@ -1,0 +1,126 @@
+.reviews {
+  width: 100%;
+  padding: 0px 100px;
+  background-color: #d9d9d9;
+  margin-top: 70px;
+  position: relative;
+  margin-bottom: 70px;
+}
+.reviews-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 120px 0;
+}
+.rc-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.rc-header > p {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+}
+.rch-btns {
+  display: flex;
+}
+.rch-btns > button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  outline: none;
+  background-color: #fc8a06;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.rc-main-content {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+.rc-main-content::-webkit-scrollbar {
+  display: none;
+}
+.rcmc-card {
+  width: 420px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.rcmc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rcmc-img-section {
+  display: flex;
+  align-items: center;
+}
+.rcmc-img-section > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.rcmc-line {
+  width: 2px;
+  margin: 0 10px;
+  height: 46px;
+  background-color: #fc8a06;
+}
+.rcmc-about > p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+.rcmc-about > p:nth-child(2) {
+  color: #fc8a06;
+  font-size: 16px;
+  line-height: 15px;
+}
+.rcmc-stars-time {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.rcmc-time {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.rcmc-time > img {
+  margin-right: 10px;
+}
+.rcmc-review {
+  margin-top: 20px;
+  font-size: 15px;
+}
+.review-rating-card {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 12px;
+  position: absolute;
+  bottom: -80px;
+  left: 45%;
+}
+.review-rating-card > p:nth-child(1) {
+  font-size: 50px;
+  font-weight: 500;
+}
