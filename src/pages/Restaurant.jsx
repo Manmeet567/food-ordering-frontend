@@ -53,14 +53,12 @@ function Restaurant() {
   }, []);
 
   const dispatch = useDispatch();
-  const { selectedRestaurant } = useSelector(
-    (state) => state.restaurants
-  );
+  const { selectedRestaurant } = useSelector((state) => state.restaurants);
   const { restaurantSlug } = useParams();
-  const { items } = useSelector((state) => state.cart);
-  useEffect(() => {
-    console.log(items);
-  }, [items]);
+  // const { items } = useSelector((state) => state.cart);
+  // useEffect(() => {
+  //   console.log(items);
+  // }, [items]);
   useEffect(() => {
     if (!selectedRestaurant && restaurantSlug) {
       dispatch(getOneRestaurant(restaurantSlug));
@@ -88,7 +86,7 @@ function Restaurant() {
           categories={productData?.categories}
         />
         {showCart && (
-          <div ref={cartRef}>
+          <div ref={cartRef} className="cart-wrapper">
             <Cart />
           </div>
         )}

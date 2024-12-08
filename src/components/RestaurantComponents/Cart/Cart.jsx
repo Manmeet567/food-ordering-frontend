@@ -37,8 +37,8 @@ function Cart() {
               <div className="mb-item-info">
                 <p>{item?.item_count}x</p>
                 <div className="mbi-info">
-                  <p>₹{item?.meal_price}</p>
-                  <p>{item?.meal_name}</p>
+                  <p>₹{item?.item_price}</p>
+                  <p>{item?.item_name}</p>
                 </div>
               </div>
               <div

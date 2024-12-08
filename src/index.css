@@ -27,4 +27,12 @@
   align-items: start;
   width: 100%;
   padding: 100px;
+  min-height: fit-content;
+  grid-template-columns: 1fr 27%;
+  position: relative;
 }
+/* .cart-wrapper {
+  position: sticky;
+  top: 10px; 
+  height: fit-content; 
+} */
