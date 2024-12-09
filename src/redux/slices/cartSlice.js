@@ -5,7 +5,7 @@ const initialState = {
   items: [],
   totalAmount: 0,
   showCart: false,
-  status: "idle", 
+  status: "idle",
   error: null,
 };
 
@@ -21,17 +21,16 @@ export const fetchCartData = createAsyncThunk(
 // Async thunk to save cart data (add or remove items)
 export const saveCartData = createAsyncThunk(
   "cart/saveCartData",
-  async ({ userId, itemId, item_name, item_price, item_img, item_count }, { rejectWithValue }) => {
+  async (
+    { userId, items },
+    { rejectWithValue }
+  ) => {
     try {
       const response = await apiClient.post("/cart/save-cart", {
         userId,
-        itemId,
-        item_name,
-        item_price,
-        item_img,
-        item_count,
+        items,
       });
-      return response.data; 
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
     }
@@ -54,7 +53,7 @@ const cartSlice = createSlice({
           item_count: 1,
         });
       }
-      state.totalAmount += newItem.item_price;
+      state.totalAmount += newItem.meal_price;
     },
 
     removeItem: (state, action) => {
@@ -67,7 +66,7 @@ const cartSlice = createSlice({
         } else {
           state.items = state.items.filter((item) => item._id !== itemId);
         }
-        state.totalAmount -= existingItem.item_price;
+        state.totalAmount -= existingItem.meal_price;
       }
     },
 
@@ -95,23 +94,9 @@ const cartSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       });
-
-    // Handling saveCartData cases
-    builder
-      .addCase(saveCartData.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(saveCartData.fulfilled, (state, action) => {
-        state.items = action.payload.items;
-        state.totalAmount = action.payload.totalAmount; 
-        state.status = "succeeded";
-      })
-      .addCase(saveCartData.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.payload || action.error.message;
-      });
   },
 });
 
-export const { addItem, removeItem, clearCart, setShowCart } = cartSlice.actions;
+export const { addItem, removeItem, clearCart, setShowCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;
