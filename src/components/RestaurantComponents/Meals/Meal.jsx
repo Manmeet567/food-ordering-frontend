@@ -4,10 +4,11 @@ import plus from "../../../assets/Plus.png";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
+import { setShowCart } from "../../../redux/slices/cartSlice";
+
 
 function Meals({ meal }) {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth.user);
   const items = useSelector((state) => state.cart.items);
 
   useEffect(() => {
@@ -16,6 +17,7 @@ function Meals({ meal }) {
 
   const handleAddMeal = () => {
     dispatch(addItem(meal));
+    dispatch(setShowCart(true));
     toast.success("Item added to cart");
   };
 

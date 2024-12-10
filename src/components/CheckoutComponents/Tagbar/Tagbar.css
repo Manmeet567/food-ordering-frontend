@@ -1,0 +1,12 @@
+.tagbar{
+    display: flex;
+    align-items: center;
+}
+.tagbar > span{
+    font-size: 28px;
+    font-weight: 600;
+}
+.tagbar > img{
+    margin-right: 10px;
+    cursor: pointer;
+}

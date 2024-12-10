@@ -229,6 +229,7 @@
     font-size: 24px;
     font-weight: 600;
     position: relative;
+    cursor: pointer;
 }
 
 .mbc-checkout-btn > img{

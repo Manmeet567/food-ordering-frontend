@@ -1,7 +1,8 @@
-// routes/routes.js
-
 import { Route, Routes } from "react-router-dom";
-import { PrivateRoute, UnprotectedRoute } from "../components/PrivateRoutes/PrivateRoutes";
+import {
+  PrivateRoute,
+  UnprotectedRoute,
+} from "../components/PrivateRoutes/PrivateRoutes";
 import Home from "../pages/Home";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
@@ -32,7 +33,6 @@ const AppRoutes = () => {
           </UnprotectedRoute>
         }
       />
-      <Route path="/checkout" element={<Checkout />} />
 
       {/* Protected Routes */}
       <Route
@@ -48,6 +48,14 @@ const AppRoutes = () => {
         element={
           <PrivateRoute>
             <Restaurant />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/checkout"
+        element={
+          <PrivateRoute>
+            <Checkout />
           </PrivateRoute>
         }
       />

@@ -1,0 +1,153 @@
+.main-checkout {
+  width: 100%;
+}
+.mc-container {
+  padding: 40px 100px 0 120px;
+}
+.mc-details {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+}
+.mc-cart-items {
+  flex: 1;
+  border-radius: 12px;
+  border: 1px solid #03081f;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.mc-delivery-address {
+  margin-left: 30px;
+  width: 40%;
+}
+.mcii-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #202938;
+  margin-bottom: 15px;
+}
+.mcii-item:last-child {
+  border-bottom: none;
+}
+.mcii-detail {
+  display: flex;
+  align-items: center;
+}
+.mcii-detail > img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+.mcii-info > p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+  color: #03081f;
+}
+.mcii-info > p:nth-child(2) {
+  font-size: 12px;
+  color: #83858a;
+}
+.mcii-price > p {
+  color: #028643;
+  font-weight: 600;
+  font-size: 14px;
+}
+.mci-notes {
+  display: flex;
+  flex-direction: column;
+}
+.mci-notes > label {
+  color: #83858a;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.mci-notes > input {
+  border-radius: 40px;
+  padding: 10px 15px;
+  border: 1px solid #202938;
+  outline: none;
+  font-size: 12px;
+}
+.mcda-address {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #03081f;
+  border-radius: 50px;
+  padding: 8px 20px 8px 8px;
+}
+.mcda-first {
+  display: flex;
+  align-items: center;
+}
+.mcda-map-img {
+  box-shadow: 0px 8px 20px 0px #56585c1f;
+  border: 1px solid #2d3748;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.mcdaf-info > p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+.mcdaf-info > p:nth-child(2) {
+  font-size: 12px;
+  color: #83858a;
+}
+.mcda-tax {
+  width: 100%;
+  border-top: 1px solid #202938;
+  border-bottom: 1px solid #202938;
+  margin: 20px 0;
+  padding: 15px 0 5px;
+}
+.mcdat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #83858a;
+  margin-bottom: 5px;
+}
+.mcdat > span:nth-child(1) {
+  font-size: 16px;
+}
+.mcdat > span:nth-child(2) {
+  font-size: 14px;
+  font-weight: 600;
+}
+.mcda-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mcda-total > span:nth-child(1) {
+  color: #83858a;
+  font-size: 20px;
+}
+.mcda-total > span:nth-child(2) {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+}
+.mcda-btn {
+  width: 100%;
+  text-align: center;
+  background-color: #fc8a06;
+  margin-top: 30px;
+  padding: 8px 10px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+}

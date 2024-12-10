@@ -10,6 +10,7 @@ import store from "../../../assets/New Store.png";
 import checkoutArrow from "../../../assets/checkout-button-forward.png";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem } from "../../../redux/slices/cartSlice";
+import {Link} from 'react-router-dom';
 
 function Cart() {
   const dispatch = useDispatch();
@@ -99,10 +100,12 @@ function Cart() {
                   <p>Starts at 16:50</p>
                 </div>
               </div>
-              <button className="mbc-checkout-btn">
-                <img src={checkoutArrow} alt="arrow" />
-                <span>Checkout!</span>
-              </button>
+              <Link to="/checkout">
+                <button className="mbc-checkout-btn">
+                  <img src={checkoutArrow} alt="arrow" />
+                  <span>Checkout!</span>
+                </button>
+              </Link>
             </div>
           </>
         )}
