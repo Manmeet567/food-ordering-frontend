@@ -1,0 +1,84 @@
+.main-address {
+  width: 100%;
+  padding: 40px 100px 0 120px;
+}
+.ma-container {
+  min-height: 100vh;
+}
+.mac-address {
+  margin: 70px 0 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 210px)); 
+  gap: 30px; 
+  align-items: center;
+}
+.mac-add-address {
+  width: 265px;
+  height: 210px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23AFAFAFFF' stroke-width='4' stroke-dasharray='5%2c10' stroke-dashoffset='6' stroke-linecap='round'/%3e%3c/svg%3e");
+  border-radius: 12px;
+}
+.macaa-plus {
+  width: 50.22px;
+  height: 50.22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #FFEDD8;
+}
+.mac-address-card{
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #AFAFAF;
+  width: 265px;
+  min-height: 210px;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.macac-name-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.macac-name-bar > p:nth-child(1){
+  font-weight: 600;
+  color: #03081F;
+}
+.macac-name-bar > p:nth-child(2){
+  font-size: 14px;
+  border-radius: 40px;
+  padding: 2px 15px;
+  background-color: #FFEDD8;
+  color: #FC8A06;
+}
+.macac-address, .macac-pno{
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+.macac-btn > button{
+  color: #FC8A06;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+}
+.macac-btn > button:nth-child(1){
+  padding-right: 10px;
+  border-right: 1px solid #AFAFAF;
+}
+.macac-btn > button:nth-child(2){
+  padding-left: 10px;
+}

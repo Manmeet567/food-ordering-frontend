@@ -1,31 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
+import MainAddress from "../components/AddressComponents/MainAddress/MainAddress";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
 
 function YourAddress() {
   return (
-    <div>YourAddress
-      <nav>
-        <ul>
-          <li>
-            <Link to="/restaurant/restaurant_name">Restaurant</Link>
-          </li>
-          <li>
-            <Link to="/your-address">Your Address</Link>
-          </li>
-          <li>
-            <Link to="/payment-page">Payment Page</Link>
-          </li>
-          <li>
-            <Link to="/order-successful">Order Successful</Link>
-          </li>
-          <li>
-            <Link to="/your-profile">Your Profile</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="your-address">
+      <Navbar />
+      <MainAddress />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default YourAddress
+export default YourAddress;

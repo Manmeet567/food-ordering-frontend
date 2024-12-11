@@ -39,8 +39,9 @@ function MainCheckout() {
               <input type="text" placeholder="Add order notes" />
             </div>
           </div>
+
           <div className="mc-delivery-address">
-            <Link to="" className="mcda-address">
+            <Link to="/your-address" className="mcda-address">
               <div className="mcda-first">
                 <div className="mcda-map-img">
                   <img src={mapPin} alt="pin" />

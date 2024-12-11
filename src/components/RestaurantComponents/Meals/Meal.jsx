@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Meal.css";
 import plus from "../../../assets/Plus.png";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem } from "../../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 import { setShowCart } from "../../../redux/slices/cartSlice";
@@ -9,11 +9,6 @@ import { setShowCart } from "../../../redux/slices/cartSlice";
 
 function Meals({ meal }) {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.cart.items);
-
-  useEffect(() => {
-    console.log(items);
-  }, [items]);
 
   const handleAddMeal = () => {
     dispatch(addItem(meal));
