@@ -34,7 +34,7 @@
   background-color: #FFEDD8;
 }
 .mac-address-card{
-  padding: 10px;
+  padding: 20px;
   border-radius: 12px;
   border: 1px solid #AFAFAF;
   width: 265px;
@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .macac-name-bar > p:nth-child(1){
   font-weight: 600;
@@ -64,7 +64,7 @@
 .macac-address, .macac-pno{
   font-size: 14px;
   line-height: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .macac-btn > button{
   color: #FC8A06;

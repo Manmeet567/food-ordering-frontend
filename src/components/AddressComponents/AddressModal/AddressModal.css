@@ -1,0 +1,66 @@
+.address-modal{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 1040px;
+}
+.am-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.am-header > img{
+    margin-right: 5px;
+}
+.amf-fields{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.amf-field:last-child{
+    margin-right: 0
+}
+.amf-field{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+    margin-right: 15px;
+    font-size: 14px;
+    color: #7E7E7E;
+    outline: none;
+    border: 1px solid #C5C5C580;
+    border-radius: 8px;
+}
+.address-modal-form > textarea{
+    width: 100%;
+    height: 158px;
+    border: 1px solid #C5C5C580;
+    border-radius: 8px;
+    padding: 5px 10px;
+    outline: none;
+    color: #7E7E7E;
+    font-weight: 500;
+    resize: none;
+    margin-bottom: 10px;
+}
+.amf-submit{
+    display: flex;
+    justify-content: end;
+}
+.amf-submit > button{
+    background-color: #FC8A06;
+    color: #fff;
+    width: 147px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}

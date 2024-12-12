@@ -1,18 +1,47 @@
-import React from "react";
+import { useState } from "react";
 import Tagbar from "../../CheckoutComponents/Tagbar/Tagbar";
 import "./MainAddress.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import plus from "../../../assets/orange-plus.png";
+import { removeAddress, addAddress, editAddress } from "../../../redux/slices/authSlice"; // Import add and edit thunks
+import Modal from "../../Modal/Modal";
+import AddressModal from "../AddressModal/AddressModal";
 
 function MainAddress() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentAddress, setCurrentAddress] = useState(null); // To hold the current address being edited
+
+  const openModal = (address = null) => {
+    setCurrentAddress(address); // Set the current address if we're editing, null if adding
+    setIsModalOpen(true);
+  };
+  const closeModal = () => setIsModalOpen(false);
+
   const { user } = useSelector((state) => state.auth);
-  console.log(user);
+  const dispatch = useDispatch();
+
+  const handleRemoveAddress = (addressId) => {
+    // Dispatch the removeAddress thunk
+    dispatch(removeAddress({ addressId }));
+  };
+
+  const handleSubmit = (formData) => {
+    if (currentAddress) {
+      // If currentAddress is set, we are in edit mode
+      dispatch(editAddress({ addressId: currentAddress._id, addressData: formData }));
+    } else {
+      // Otherwise, we are in add mode
+      dispatch(addAddress(formData));
+    }
+    closeModal(); // Close the modal after submission
+  };
+
   return (
     <div className="main-address">
       <div className="ma-container">
         <Tagbar tag="Your Addresses" />
         <div className="mac-address">
-          <div className="mac-add-address">
+          <div className="mac-add-address" onClick={() => openModal()}>
             <div className="macaa-plus">
               <img src={plus} alt="plus" />
             </div>
@@ -34,13 +63,21 @@ function MainAddress() {
                 </p>
               </div>
               <div className="macac-btn">
-                <button>Edit</button>
-                <button>Remove</button>
+                <button onClick={() => openModal(address)}>Edit</button>
+                <button onClick={() => handleRemoveAddress(address?._id)}>
+                  Remove
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <AddressModal
+          address={currentAddress} 
+          onSubmit={handleSubmit}
+        />
+      </Modal>
     </div>
   );
 }
