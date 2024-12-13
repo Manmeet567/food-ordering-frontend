@@ -16,6 +16,7 @@ function MainCheckout() {
         <div className="mc-details">
           <div className="mc-cart-items">
             <div className="mci-items">
+              {items?.length == 0 && <div>No items in cart.</div>}
               {items?.map((item) => (
                 <div className="mcii-item" key={item?._id}>
                   <div className="mcii-detail">
@@ -63,7 +64,7 @@ function MainCheckout() {
               </div>
               <div className="mcdat">
                 <span>Sales Tax</span>
-                <span>₹10</span>
+                <span>₹{totalAmount ? "10" : "0"}</span>
               </div>
             </div>
             <div className="mcda-total">
@@ -71,10 +72,10 @@ function MainCheckout() {
                 Subtotal ({items?.length} {items?.length > 1 ? "items" : "item"}
                 )
               </span>
-              <span>₹{totalAmount + 10}</span>
+              <span>₹{totalAmount ? totalAmount + 10 : totalAmount}</span>
             </div>
 
-            <Link to="">
+            <Link to="/payment-page">
               <div className="mcda-btn">Choose Payment Method</div>
             </Link>
           </div>

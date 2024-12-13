@@ -1,0 +1,83 @@
+.main-payment {
+  width: 100%;
+}
+.mp-container {
+  padding: 40px 100px 100px 120px;
+  min-height: 100vh;
+}
+.mp-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.mp-payment-method {
+  flex: 1;
+}
+.mp-proceed {
+  width: 40%;
+  margin-left: 30px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 12px;
+}
+.mpm-active-method {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  padding: 10px 20px 10px 10px;
+  border: 1px solid #ffe8ce;
+  cursor: pointer;
+}
+.mpm-first {
+  display: flex;
+  align-items: center;
+}
+.active-wallet {
+  border: 1px solid #2d3748;
+  background-color: #ffe8ce;
+  box-shadow: 0px 8px 20px 0px #56585c1f;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wallet-info {
+  margin-left: 10px;
+}
+.wallet-info > p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 500;
+}
+.wallet-info > p:nth-child(2) {
+  font-size: 12px;
+  color: #83858a;
+}
+.mp-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+}
+.mp-amount > span:nth-child(1) {
+  color: #83858a;
+  font-size: 20px;
+}
+.mp-amount > span:nth-child(2) {
+  font-weight: 700;
+  font-size: 20px;
+}
+.mp-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #fc8a06;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  font-weight: 600;
+}
