@@ -7,27 +7,27 @@ export const PrivateRoute = ({ children }) => {
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.auth);
   
-  // useEffect(() => {
-  //   const storedUser = localStorage.getItem('user');
-  //   if (!storedUser) {
-  //     navigate('/login', { replace: true });
-  //     return;
-  //   }
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (!storedUser) {
+      navigate('/login', { replace: true });
+      return;
+    }
 
-  //   try {
-  //     const data = JSON.parse(storedUser);
+    try {
+      const data = JSON.parse(storedUser);
 
-  //     const decodedToken = jwtDecode(data?.token);
+      const decodedToken = jwtDecode(data?.token);
 
-  //     if (decodedToken.exp * 1000 < Date.now()) {
-  //       localStorage.removeItem('user');
-  //       navigate('/login', { replace: true });
-  //     }
-  //   } catch (error) {
-  //     localStorage.removeItem('user');
-  //     navigate('/login', { replace: true });
-  //   }
-  // }, [navigate, token]);
+      if (decodedToken.exp * 1000 < Date.now()) {
+        localStorage.removeItem('user');
+        navigate('/login', { replace: true });
+      }
+    } catch (error) {
+      localStorage.removeItem('user');
+      navigate('/login', { replace: true });
+    }
+  }, [navigate, token]);
   useEffect(() => {
     if (!token) {
       navigate('/login', { replace: true });

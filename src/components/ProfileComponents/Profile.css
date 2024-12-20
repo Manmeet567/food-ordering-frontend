@@ -1,0 +1,115 @@
+.profile {
+  width: 100%;
+  padding: 40px 100px 100px 120px;
+}
+.main-profile {
+}
+.mp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0 20px;
+}
+.mph-img {
+  display: flex;
+  align-items: center;
+}
+.mph-img > img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+.mph-img > p {
+  font-size: 24px;
+  font-weight: 500;
+}
+.mp-header > button {
+  background-color: #fc8a06;
+  padding: 8px 25px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+.mp-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.mpf-field {
+  display: flex;
+  flex-direction: column;
+}
+.mpf-field > label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.mpf-field > input {
+  background-color: #f9f9f9;
+  outline: none;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 8px 15px;
+}
+.mp-payment-method {
+  padding-top: 25px;
+  border-top: 1px solid #000000;
+  margin-top: 30px;
+}
+.mp-payment-method > p:nth-child(1) {
+  font-size: 24px;
+  font-weight: 500;
+}
+.mppm-method-list {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.mpml-method {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.5px solid #00000080;
+  border-radius: 12px;
+  padding: 12px;
+  width: 312px;
+  height: 74px;
+  margin-right: 25px;
+}
+.mpml-method > div:nth-child(1), .mpml-add > div:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  background-color: #fc890610;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mpml-method > div:nth-child(2) > p:nth-child(1) {
+  font-size: 20px;
+}
+.mpml-method > div:nth-child(2) > p:nth-child(2) {
+  font-size: 14px;
+  color: #00000085;
+}
+.mpml-method > img:nth-child(3) {
+  cursor: pointer;
+}
+.mpml-add {
+  width: 240px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.5px solid #00000080;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 20px;
+}
